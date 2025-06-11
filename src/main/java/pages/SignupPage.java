@@ -62,15 +62,15 @@ public class SignupPage {
     public void verifyTheSignupPageClass() {
 
         pageLoad();
-        firstNameField.sendKeys("Simran");
+        firstNameField.sendKeys("test");
         pageLoad();
-        lastNameField.sendKeys("Malhotra");
+        lastNameField.sendKeys("user5");
         pageLoad();
-        emailField.sendKeys("simi123@gmail.com");
+        emailField.sendKeys("testUser05@gmail.com");
         pageLoad();
-        passwordField.sendKeys("QWERTY@1234");
+        passwordField.sendKeys("QWERTY@09834");
         pageLoad();
-        confirmPasswordField.sendKeys("QWERTY@1234");
+        confirmPasswordField.sendKeys("QWERTY@09834");
         pageLoad();
 
         createAnAccountButton.click();

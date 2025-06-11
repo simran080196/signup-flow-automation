@@ -29,19 +29,27 @@ public class SignupSteps {
     }
 
     @Then("verify that user land on create signup page")
-    public void verifyCreateAccountPage()
-    {
+    public void verifyCreateAccountPage() {
         String expectedTitle = driver.getTitle();
         Assert.assertEquals(expectedTitle, "Create New Customer Account");
+    }
+
+    @Then("User enters valid first name, last name, email, password and confirm password.")
+    public void verifyTheSignupPageClass()
+    {
         signupPage.verifyTheSignupPageClass();
     }
 
-    @Then("User should be redirected to the dashboard page")
+    @Then("User is redirected to the dashboard page")
     public void verifyTheDashboardPage()
     {
-
+        String expectedTitle = driver.getTitle();
+        Assert.assertEquals(expectedTitle, "My Account");
     }
 
-
-
+    @Then("User quit the driver")
+    public void quitDriver()
+    {
+        driver.quit();
+    }
 }
