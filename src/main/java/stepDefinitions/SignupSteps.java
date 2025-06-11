@@ -10,31 +10,36 @@ import pages.SignupPage;
 
 public class SignupSteps {
     WebDriver driver;
-    SignupPage signupPage = new SignupPage(driver);
-
+    SignupPage signupPage;
     @Given("User launch the browser and enter the URL.")
     public void launchTheBrowser(){
+
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://magento.softwaretestingboard.com/");
+        signupPage = new SignupPage(driver);
     }
 
     @When("User click on Create Account")
     public void clickOnCreateAccount()
     {
+        //SignupPage signupPage = new SignupPage(driver);
+
         signupPage.clickOnCreateAccount();
     }
 
     @Then("verify that user land on create signup page")
     public void verifyTheSignupPage()
     {
+       // SignupPage signupPage = new SignupPage(driver);
         signupPage.verifyTheSignupPageClass();
     }
 
     @Then("User should be redirected to the dashboard page")
     public void verifyTheDashboardPage()
     {
+        //SignupPage signupPage = new SignupPage(driver);
         signupPage.verifyTheDashboardPage();
     }
 }

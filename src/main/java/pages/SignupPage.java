@@ -6,16 +6,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class SignupPage {
     //(//a[contains(text(), 'Create an Account')])[1]
 
     WebDriver driver;
-
-    public SignupPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     @FindBy(xpath = "(//a[contains(text(), 'Create an Account')])[1]")
     WebElement createAnAccountLink;
@@ -40,6 +36,11 @@ public class SignupPage {
 
     @FindBy(xpath = "//span[text()=\"My Account\"]")
     WebElement myAccountDetails;
+
+    public SignupPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
 
     public void pageLoad()
     {
