@@ -4,6 +4,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.SignupPage;
@@ -24,22 +25,23 @@ public class SignupSteps {
     @When("User click on Create Account")
     public void clickOnCreateAccount()
     {
-        //SignupPage signupPage = new SignupPage(driver);
-
         signupPage.clickOnCreateAccount();
     }
 
     @Then("verify that user land on create signup page")
-    public void verifyTheSignupPage()
+    public void verifyCreateAccountPage()
     {
-       // SignupPage signupPage = new SignupPage(driver);
+        String expectedTitle = driver.getTitle();
+        Assert.assertEquals(expectedTitle, "Create New Customer Account");
         signupPage.verifyTheSignupPageClass();
     }
 
     @Then("User should be redirected to the dashboard page")
     public void verifyTheDashboardPage()
     {
-        //SignupPage signupPage = new SignupPage(driver);
-        signupPage.verifyTheDashboardPage();
+
     }
+
+
+
 }

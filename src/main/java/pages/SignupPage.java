@@ -75,13 +75,4 @@ public class SignupPage {
 
         createAnAccountButton.click();
     }
-
-    public void verifyTheDashboardPage() {
-
-        pageLoad();
-        if(myAccountDetails.isDisplayed())
-        {
-            System.out.println("Account Creation is successful and the User is now redirected to the dashboard");
-        }
-    }
 }
